@@ -11,6 +11,7 @@
   </head>
   <body>
     <h1>Welcome to the Calorie Calculator!</h1>
+    <p>This program using the Mifflin St. Jeor equation to determine your daily caloric expenditure.</p>
     <div id="userInformation">
     <fieldset>
       <legend>Gender</legend>
@@ -29,6 +30,19 @@
     <fieldset>
       <legend>Weight</legend>
       <input type="text" name="wt" value=""> pounds
+    </fieldset>
+    <fieldset>
+      <legend>Activity Level</legend>
+      <input type="radio" name="activity" value="1"> Sedentary
+      <input type="radio" name="activity" value="1.3"> Slighty Active
+      <input type="radio" name="activity" value="1.6"> Somewhat Active
+      <input type="radio" name="activity" value="2"> Seriously Active
+    </fieldset>
+    <fieldset>
+      <legend>Your Goal</legend>
+      <input type="radio" name="goal" value="0"> Lose weight
+      <input type="radio" name="goal" value="1"> Maintain weight
+      <input type="radio" name="goal" value="2"> Gain weight
     </fieldset>
     <button type="button" name="button">CALCULATE</button>
   </div>

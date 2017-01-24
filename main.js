@@ -25,8 +25,15 @@ function myBMIFunction(height, weight) {
     document.getElementById("bmi-class").innerHTML = bmiClass;
 }
 
+function myCalExpenditure() {
+  if()
+}
+
 $(document).ready(function() {
   $('button').on('click', function() {
+
+    //ON CLICK - save these variables to local or session storage so can easily access again
+    //give the impression of a database but there really isn't any
     var gender = $("input[name='gender']").val();
     var age = $("input[name='age']").val();
     var height = parseInt($("input[name='ht-feet']").val()) * 12 + parseInt($("input[name='ht-inches']").val());
@@ -36,20 +43,3 @@ $(document).ready(function() {
   });
 
 });
-// def height_conversion(str)
-// feet, inches = self.height.match(/(\d{1}).(\d{1,2})./).captures
-// 12 * feet.to_i + inches.to_i
-// end
-//   def bmi
-//     703 * self.weight.to_i / (height_conversion(self.height)**2)
-//   end
-//
-//   def bmr
-//     weight = self.weight.to_i * 0.453 #Convert to kg
-//     height = height_conversion(self.height.to_i) * 2.54 #Conert to cm
-//     if self.gender == "male"
-//       10 * weight + 6.25 * height - 5 * self.age.to_i + 5
-//     else #self.gender == "female"
-//       10 * weight + 6.25 * height - 5 * self.age.to_i - 161
-//     end
-//   end
