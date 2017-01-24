@@ -1,6 +1,4 @@
 function myBMIFunction() {
-    // var userHeight = prompt("What is your height? (in inches)");
-    // var userWeight = prompt("What is your weight? (in pounds)");
     var userHeight = 76;
     var userWeight = 200;
     var userBMI = userWeight * 703 / (userHeight * userHeight);
@@ -28,9 +26,12 @@ function myBMIFunction() {
 }
 
 $(document).ready(function() {
-  console.log('hello world');
-
   $('button').on('click', function() {
+    var gender = $("input[name='gender']").val();
+    var age = $("input[name='age']").val();
+    var height = parseInt($("input[name='ht-feet']").val()) * 12 + parseInt($("input[name='ht-inches']").val());
+    var weight = $("input[name='wt']").val();
+    console.log(height);
     myBMIFunction();
   });
 
