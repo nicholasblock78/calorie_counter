@@ -1,6 +1,6 @@
-function myBMIFunction() {
-    var userHeight = 76;
-    var userWeight = 200;
+function myBMIFunction(height, weight) {
+    var userHeight = height;
+    var userWeight = weight;
     var userBMI = userWeight * 703 / (userHeight * userHeight);
     var bmiClass;
     if (userBMI >= 40) {
@@ -32,7 +32,7 @@ $(document).ready(function() {
     var height = parseInt($("input[name='ht-feet']").val()) * 12 + parseInt($("input[name='ht-inches']").val());
     var weight = $("input[name='wt']").val();
     console.log(height);
-    myBMIFunction();
+    myBMIFunction(height, weight);
   });
 
 });
