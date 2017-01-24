@@ -1,3 +1,19 @@
+body {
+  background-color: rgba(66, 140, 244, 0.8);
+}
+
+fieldset {
+    display: inline-block;
+}
+
+.sm {
+  width: 30%;
+}
+
+.med {
+  width: 60%;
+}
+
 footer {
   margin-top: 100px;
 }

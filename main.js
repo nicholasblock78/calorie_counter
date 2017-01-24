@@ -26,7 +26,7 @@ function myBMIFunction(height, weight) {
 }
 
 function myCalExpenditure() {
-  if()
+  
 }
 
 $(document).ready(function() {
