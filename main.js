@@ -30,6 +30,7 @@ function myCalExpenditure() {
 }
 
 $(document).ready(function() {
+
   if (localStorage.length === 0) {
     console.log('elseland');
   } else {
@@ -37,7 +38,10 @@ $(document).ready(function() {
     console.log('calculating...')
     myBMIFunction(localStorage.getItem('height'),localStorage.getItem('weight'));
   }
+
+  //RESET BUTTON
   $('button.reset').on('click', function() {
+
     console.log('resetting...')
     // localStorage.clear();
     window.localStorage.removeItem('age');
@@ -52,7 +56,26 @@ $(document).ready(function() {
     $('#userInformation').css('display', 'inline');
   });
 
-  $('button').on('click', function() {
+  $('button.calc').on('click', function() {
+    if ($('input[name=age]').val() === '') {
+      alert('You must enter an age!');
+    }
+    if (!$('input[name=gender]:checked')[0]) {
+      alert('You must select a gender!');
+    }
+    if ($('input[name=wt]').val() === '') {
+      alert('You must enter a weight!');
+    }
+    if (($('input[name=ht-feet]').val() || $('input[name=ht-inches]').val()) === '') {
+      alert('You must enter a height!');
+    }
+    if (!$('input[name=activity]:checked')[0]) {
+      alert('You must select an activity!');
+    }
+    if (!$('input[name=goal]:checked')[0]) {
+      alert('You must select a goal!');
+    }
+    else {
     //ON CLICK - save these variables to local or session storage so can easily access again
     //give the impression of a database but there really isn't any
     var gender = $("input[name='gender']").val();
@@ -66,6 +89,7 @@ $(document).ready(function() {
     localStorage.setItem('weight', weight);
 
     myBMIFunction(height, weight);
+  }
   });
 
 });
