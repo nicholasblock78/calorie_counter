@@ -39,9 +39,16 @@ $(document).ready(function() {
   }
   $('button.reset').on('click', function() {
     console.log('resetting...')
-    window.localStorage.clear();
-    $('#bmi').empty();
-    $('#bmi-class').empty();
+    // localStorage.clear();
+    window.localStorage.removeItem('age');
+    window.localStorage.removeItem('gender');
+    window.localStorage.removeItem('height');
+    window.localStorage.removeItem('weight');
+
+    document.getElementById("bmi").innerHTML = "";
+    document.getElementById("bmi-class").innerHTML = "";
+    // $('#bmi').empty();
+    // $('#bmi-class').empty();
     $('#userInformation').css('display', 'inline');
   });
 
