@@ -4,7 +4,7 @@ function myBMIFunction(height, weight) {
     var userBMI = userWeight * 703 / (userHeight * userHeight);
     var bmiClass;
     if (userBMI >= 40) {
-    	bmiCLass = "Class III Obese";
+    	bmiClass = "Class III Obese";
     }
     else if (userBMI >= 35) {
     	bmiClass = "Class II Obese";
@@ -21,7 +21,7 @@ function myBMIFunction(height, weight) {
     else {
     	bmiClass = "Underweight!!";
     }
-    document.getElementById("bmi").innerHTML = userBMI;
+    document.getElementById("bmi").innerHTML = userBMI.toFixed(2);
     document.getElementById("bmi-class").innerHTML = bmiClass;
 }
 
@@ -36,6 +36,8 @@ $(document).ready(function() {
   } else {
     $('#userInformation').css('display', 'none');
     console.log('calculating...')
+    document.getElementById("info").innerHTML = "<strong>Welcome Back!</strong>";
+
     myBMIFunction(localStorage.getItem('height'),localStorage.getItem('weight'));
   }
 
@@ -51,6 +53,8 @@ $(document).ready(function() {
 
     document.getElementById("bmi").innerHTML = "";
     document.getElementById("bmi-class").innerHTML = "";
+    document.getElementById("info").innerHTML = "";
+
     // $('#bmi').empty();
     // $('#bmi-class').empty();
     $('#userInformation').css('display', 'inline');
