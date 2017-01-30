@@ -64,19 +64,19 @@ $(document).ready(function() {
     if ($('input[name=age]').val() === '') {
       alert('You must enter an age!');
     }
-    if (!$('input[name=gender]:checked')[0]) {
+      else if (!$('input[name=gender]:checked')[0]) {
       alert('You must select a gender!');
     }
-    if ($('input[name=wt]').val() === '') {
+      else if ($('input[name=wt]').val() === '') {
       alert('You must enter a weight!');
     }
-    if (($('input[name=ht-feet]').val() || $('input[name=ht-inches]').val()) === '') {
+      else if (($('input[name=ht-feet]').val() || $('input[name=ht-inches]').val()) === '') {
       alert('You must enter a height!');
     }
-    if (!$('input[name=activity]:checked')[0]) {
+      else if (!$('input[name=activity]:checked')[0]) {
       alert('You must select an activity!');
     }
-    if (!$('input[name=goal]:checked')[0]) {
+      else if (!$('input[name=goal]:checked')[0]) {
       alert('You must select a goal!');
     }
     else {
