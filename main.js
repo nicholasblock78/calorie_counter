@@ -26,12 +26,26 @@ function myBMIFunction(height, weight) {
 }
 
 function myCalExpenditure() {
-  
+
 }
 
 $(document).ready(function() {
-  $('button').on('click', function() {
+  if (localStorage.length === 0) {
+    console.log('elseland');
+  } else {
+    $('#userInformation').css('display', 'none');
+    console.log('calculating...')
+    myBMIFunction(localStorage.getItem('height'),localStorage.getItem('weight'));
+  }
+  $('button.reset').on('click', function() {
+    console.log('resetting...')
+    window.localStorage.clear();
+    $('#bmi').empty();
+    $('#bmi-class').empty();
+    $('#userInformation').css('display', 'inline');
+  });
 
+  $('button').on('click', function() {
     //ON CLICK - save these variables to local or session storage so can easily access again
     //give the impression of a database but there really isn't any
     var gender = $("input[name='gender']").val();
@@ -39,6 +53,11 @@ $(document).ready(function() {
     var height = parseInt($("input[name='ht-feet']").val()) * 12 + parseInt($("input[name='ht-inches']").val());
     var weight = $("input[name='wt']").val();
     console.log(height);
+    localStorage.setItem('gender', gender);
+    localStorage.setItem('age', age);
+    localStorage.setItem('height', height);
+    localStorage.setItem('weight', weight);
+
     myBMIFunction(height, weight);
   });
 
